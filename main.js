@@ -6,7 +6,7 @@ const fs = require('fs'),
  bodyParser = require('body-parser'),
   cors = require('cors'),
   exp = require('express'),
-express = exp();
+express = exp(3000);
 
 
 
@@ -46,12 +46,13 @@ mongoose.connect(process.env.MONGODB_URI, {
       });
     })
   } else {
-    express.use(exp.static(path.resolve(__dirname,'unavailable/static')))
+
+    console.log(err)
     express.get('/',function (req,res) {
-      let index = path.resolve(__dirname,'unavailable/index.html');
-      res.sendFile(index)
+        res.send('Server unavailable')
     });
 
-    express.listen(process.env.PORT || 5000)
+    
   }
+  express.listen(process.env.PORT || 8978)
 });
