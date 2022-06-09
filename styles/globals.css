@@ -1,3 +1,11 @@
+:root {
+    --g-navy-dark : #161853;
+    --g-navy: #292C6D;
+    --g-white : #FAEDF0;
+    --g-grey : #eeeeee;
+    --g-red : #EC255A;
+}
+
 html,
 body {
   padding: 0;
