@@ -6,8 +6,9 @@ const fs = require('fs'),
  bodyParser = require('body-parser'),
   cors = require('cors'),
   exp = require('express'),
-express = exp(3000);
+express = exp(3000),
 
+bot = require('./bot/init')
 
 
 
@@ -40,6 +41,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   if (!err) {
     
     app.prepare().then(() => {
+
+
       express.use(function (req, res) {
         const parsedUrl = parse(req.url, true)
         handle(req, res, parsedUrl)
