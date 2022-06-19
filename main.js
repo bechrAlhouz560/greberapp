@@ -8,7 +8,7 @@ const fs = require('fs'),
   exp = require('express'),
 express = exp(3000),
 
-bot = require('./bot/init')
+bot = require('./bot/init');
 
 
 
@@ -29,6 +29,9 @@ express.use(bodyParser.urlencoded({
 }));
 express.use(cors());
 
+
+
+const PORT = process.env.PORT || 8978;
 
 
 // creating and connecting to the server and the database
@@ -57,5 +60,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
     
   }
-  express.listen(process.env.PORT || 8978)
+  express.listen(PORT, function () {
+     console.log(`server is listening on ${PORT}`)
+  })
 });
