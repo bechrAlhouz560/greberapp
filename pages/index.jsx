@@ -12,7 +12,7 @@ const Home = () => {
       </Head>
       <h1>Under development</h1>
 
-      <span className='tracking-tighter'>This is the future discord bot !</span>
+      <span className='tracking-tighter'>This is the future discord bot ! get ready !</span>
       <button className={'btn'}>Discover Our Bot !</button>
     </div>
   )
